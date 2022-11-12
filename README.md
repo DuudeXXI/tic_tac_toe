@@ -19,7 +19,7 @@ Main menu page with routing
 ## 🎯 Project features/goals
 
 -   [x] Creating react app
--   [ ] Importing packages (Sass, React Router)
+-   [x] Importing packages (Sass, React Router)
 -   [x] Basic design (for developing process)
 -   [x] Functioning game
 -   [x] Advanced design style
@@ -31,10 +31,10 @@ Main menu page with routing
 
 ### 💻 Prerequisites
 
-react - _download and install_
-react-router-dom - _download and install_
-sass - _download and install_
-Git - _download and install_
+react - _download and install_;
+react-router-dom - _download and install_;
+sass - _download and install_;
+Git - _download and install_;
 
 ### 🏃 Run locally
 
