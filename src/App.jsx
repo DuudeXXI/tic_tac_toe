@@ -44,6 +44,13 @@ function App() {
   }, [result])
 
   const chooseSquare = (square) => {
+    /* Reikia taisyti, darant papildoma tikrinima
+    ar langelis yra pilnas ir jeigu pilnas,
+    nieko nedaryt,
+    jeigu tuscias idet esama zaideja
+    ir tik tada pakeist player
+    nes paspaudus ant langelio,
+    kuris yra pazymetas pasikeicia player'is*/
     setBoard(
       board.map((value, index) => {
         if (index === square && value === "") {
@@ -72,6 +79,8 @@ function App() {
   }
 
   const checkTie = () => {
+    /* reikia taisyti tikrinima, nes kai nera tusciu nebutinai
+     reiskia lygiasias, kartais tai yra laimejimas */
     let filled = true;
     board.forEach((square) => {
       if (square === "") {
