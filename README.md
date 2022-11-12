@@ -22,6 +22,8 @@ Main menu page with routing
 -   [x] Importing packages (Sass, React Router)
 -   [x] Basic design (for developing process)
 -   [x] Functioning game
+-   [x] Ability to play with mouse
+-   [ ] Ability to play with SPACEBAR and WASD or ARROW KEYS
 -   [x] Advanced design style
 -   [x] Responsive design
 -   [ ] Main menu page
