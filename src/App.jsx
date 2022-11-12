@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     checkWin();
     checkTie();
-    setPlayer(x => x === "O" ? "X" : "O")
+      setPlayer(x => x === "O" ? "X" : "O")
     if (xxx === scoreLimit && ooo < scoreLimit) {
       alert(`Winner ${result.winner}`)
       setXxx(0)
@@ -40,6 +40,7 @@ function App() {
       alert("Lygios")
     }
     restartGame()
+    setPlayer("O")
   }, [result])
 
   const chooseSquare = (square) => {
@@ -90,7 +91,7 @@ function App() {
   return (
     <div className="App">
       <div className="points">
-        <h1>{ooo} / {xxx}</h1>
+        <h1>{ooo} | {xxx}</h1>
         <h2>Current move: {player}</h2>
       </div>
       <div className="board">
@@ -113,6 +114,8 @@ function App() {
               chooseSquare(2);
             }}
           />
+          <div className="line line-top"></div>
+          <div className="line line-vertical-left"></div>
         </div>
         <div className="row">
           <Square
@@ -133,6 +136,7 @@ function App() {
               chooseSquare(5);
             }}
           />
+          <div className="line line-bottom"></div>
         </div>
         <div className="row">
           <Square
@@ -153,6 +157,7 @@ function App() {
               chooseSquare(8);
             }}
           />
+          <div className="line line-vertical-right"></div>
         </div>
       </div>
     </div>
