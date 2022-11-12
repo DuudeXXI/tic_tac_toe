@@ -11,10 +11,21 @@ function App() {
   const [xxx, setXxx] = useState(0)
   const [ooo, setOoo] = useState(0)
 
+  let scoreLimit = 5
+
   useEffect(() => {
     checkWin();
     checkTie();
     setPlayer(x => x === "O" ? "X" : "O")
+    if (xxx === scoreLimit && ooo < scoreLimit) {
+      alert(`Winner ${result.winner}`)
+      setXxx(0)
+      setOoo(0)
+    } else if (ooo === scoreLimit && xxx < scoreLimit) {
+      alert(`Winner ${result.winner}`)
+      setXxx(0)
+      setOoo(0)
+    }
   }, [board])
   
   useEffect(() => {
@@ -23,21 +34,14 @@ function App() {
     }
     if (result.winner === "X") {
       setXxx(x => ++x)
-    } else if (result.winner !== "No one") {
+    } else if (result.winner === "O"){
       setOoo(o => ++o)
-      checker(ooo)
+    } else {
+      alert("Lygios")
     }
     restartGame()
   }, [result])
-  const checker = curr => {
-    console.log(curr);
-    if(curr === 2){
-      alert(`Game Finished! Player: ${result.winner} - ${result.state}`)
-      setXxx(0)
-      setOoo(0)
-    }
-  }
-  console.log(ooo, xxx);
+
   const chooseSquare = (square) => {
     setBoard(
       board.map((value, index) => {
@@ -54,7 +58,6 @@ function App() {
       const firstPlayer = board[currPattern[0]];
       if (firstPlayer === "") return;
       let foundWinningPattern = true
-
       currPattern.forEach((index) => {
         if (board[index] !== firstPlayer) {
           foundWinningPattern = false
@@ -88,6 +91,7 @@ function App() {
     <div className="App">
       <div className="points">
         <h1>{ooo} / {xxx}</h1>
+        <h2>Current move: {player}</h2>
       </div>
       <div className="board">
         <div className="row">
