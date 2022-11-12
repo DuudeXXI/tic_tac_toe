@@ -28,6 +28,7 @@ Main menu page with routing
 -   [x] Advanced design style
 -   [x] Responsive design
 -   [ ] Main menu page
+-   [ ] Options page
 -   [ ] localStorage to store scores
 -   [ ] different colors for each player (css variables)
 -   [ ] Bug fixes
