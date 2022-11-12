@@ -1,6 +1,6 @@
-![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
-![Library](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
-![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+![Javascript]([https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black))
+![Sass]([https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white))
+![React]([https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB))
 
 # Tic-Tac-Toe game on React
 
