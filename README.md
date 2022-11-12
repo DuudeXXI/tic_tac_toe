@@ -5,8 +5,6 @@
 
 Modern style version
 
-<br>
-
 ## 🌟 About
 
 This project is about Tic-Tac-Toe game.
