@@ -6,7 +6,7 @@ import { Patterns } from "./Patterns";
 function App() {
   
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
-  const [player, setPlayer] = useState("O");
+  const [player, setPlayer] = useState("X");
   const [result, setResult] = useState({winner: "none", state: "none"})
   const [xxx, setXxx] = useState(0)
   const [ooo, setOoo] = useState(0)
@@ -16,7 +16,6 @@ function App() {
   useEffect(() => {
     checkWin();
     checkTie();
-      setPlayer(x => x === "O" ? "X" : "O")
     if (xxx === scoreLimit && ooo < scoreLimit) {
       alert(`Winner ${result.winner}`)
       setXxx(0)
@@ -40,7 +39,7 @@ function App() {
       alert("Lygios")
     }
     restartGame()
-    setPlayer("O")
+    setResult({winner: "none", state: "none"}) // sitas duoda resultata none reikia kazkur ji padet, nes dabar mes gaunam atvirkscia nugaletoja
   }, [result])
 
   const chooseSquare = (square) => {
@@ -54,7 +53,10 @@ function App() {
     setBoard(
       board.map((value, index) => {
         if (index === square && value === "") {
-          return player;
+          if(result.winner === "none") {
+            setPlayer(x => x === "X" ? "O" : "X")
+            return player;
+          }
         }
         return value;
       })
@@ -94,7 +96,7 @@ function App() {
 
   const restartGame = () => {
     setBoard(["", "", "", "", "", "", "", "", ""])
-    setPlayer(x => x === "X" ? "O" : "X")
+    setPlayer("X")
   }
 
   return (
