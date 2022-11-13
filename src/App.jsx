@@ -11,19 +11,20 @@ function App() {
   const [xxx, setXxx] = useState(0)
   const [ooo, setOoo] = useState(0)
 
-  let scoreLimit = 5
+  let scoreLimit = 2
 
   useEffect(() => {
     checkWin();
-    checkTie();
-    if (xxx === scoreLimit && ooo < scoreLimit) {
-      alert(`Winner ${result.winner}`)
+    if (xxx === scoreLimit) {
+      alert(`Winner ${result.winner}${result.state}`)
       setXxx(0)
       setOoo(0)
-    } else if (ooo === scoreLimit && xxx < scoreLimit) {
-      alert(`Winner ${result.winner}`)
+      setResult({winner: "none", state: "none"})
+    } else if (ooo === scoreLimit) {
+      alert(`Winner ${result.winner}${result.state}`)
       setXxx(0)
       setOoo(0)
+      setResult({winner: "none", state: "none"})
     }
   }, [board])
   
@@ -33,30 +34,25 @@ function App() {
     }
     if (result.winner === "X") {
       setXxx(x => ++x)
+      restartGame()
     } else if (result.winner === "O"){
       setOoo(o => ++o)
+      restartGame()
     } else {
       alert("Lygios")
+      restartGame()
     }
-    restartGame()
-    setResult({winner: "none", state: "none"}) // sitas duoda resultata none reikia kazkur ji padet, nes dabar mes gaunam atvirkscia nugaletoja
+
   }, [result])
 
   const chooseSquare = (square) => {
-    /* Reikia taisyti, darant papildoma tikrinima
-    ar langelis yra pilnas ir jeigu pilnas,
-    nieko nedaryt,
-    jeigu tuscias idet esama zaideja
-    ir tik tada pakeist player
-    nes paspaudus ant langelio,
-    kuris yra pazymetas pasikeicia player'is*/
     setBoard(
       board.map((value, index) => {
         if (index === square && value === "") {
-          if(result.winner === "none") {
+          if ((xxx !== scoreLimit) || (ooo !== scoreLimit)) {
             setPlayer(x => x === "X" ? "O" : "X")
-            return player;
           }
+            return player;
         }
         return value;
       })
@@ -65,34 +61,35 @@ function App() {
 
   const checkWin = () => {
     Patterns.forEach((currPattern) => {
+      let foundWinningPattern = true
+      let secondIndicator = false
       const firstPlayer = board[currPattern[0]];
       if (firstPlayer === "") return;
-      let foundWinningPattern = true
       currPattern.forEach((index) => {
         if (board[index] !== firstPlayer) {
           foundWinningPattern = false
         }
       })
-
       if (foundWinningPattern) {
-        setResult({winner: player, state: "Won"})
+        setResult({winner: player === "X" ? "O" : "X", state: "Won"})
+        /* sioje vietoje nugaletojas apkeistas dirbtinai, bet kol veikia*/
       }
     })
   }
 
-  const checkTie = () => {
-    /* reikia taisyti tikrinima, nes kai nera tusciu nebutinai
-     reiskia lygiasias, kartais tai yra laimejimas */
-    let filled = true;
-    board.forEach((square) => {
-      if (square === "") {
-        filled = false
-      }
-    })
-    if (filled) {
-      setResult({winner: "No one", state: "Tie"})
-    }
-  }
+  // const checkTie = () => {
+  //   /* reikia taisyti tikrinima, nes kai nera tusciu nebutinai
+  //    reiskia lygiasias, kartais tai yra laimejimas */
+  //   let filled = true;
+  //   board.forEach((square) => {
+  //     if (square === "") {
+  //       filled = false
+  //     }
+  //   })
+  //   if (filled) {
+  //     setResult({winner: "No one", state: "Tie"})
+  //   }
+  // }
 
   const restartGame = () => {
     setBoard(["", "", "", "", "", "", "", "", ""])
