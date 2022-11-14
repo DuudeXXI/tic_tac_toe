@@ -62,7 +62,7 @@ function App() {
   const checkWin = () => {
     Patterns.forEach((currPattern) => {
       let foundWinningPattern = true
-      let secondIndicator = false
+
       const firstPlayer = board[currPattern[0]];
       if (firstPlayer === "") return;
       currPattern.forEach((index) => {
