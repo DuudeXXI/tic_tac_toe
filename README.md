@@ -1,5 +1,5 @@
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
 # Tic-Tac-Toe game on React
@@ -25,13 +25,15 @@ Main menu page with routing
 -   [x] Functioning game
 -   [x] Ability to play with mouse
 -   [ ] Ability to play with SPACEBAR and WASD or ARROW KEYS
+-   [x] Game rules bug
 -   [x] Advanced design style
 -   [x] Responsive design
 -   [ ] Main menu page
 -   [ ] Options page
--   [ ] localStorage to store scores
 -   [ ] different colors for each player (css variables)
--   [ ] Bug fixes
+-   [ ] localStorage to store
+    - [ ] Scores
+    - [ ] Selected color
 
 ### 💻 Prerequisites
 
