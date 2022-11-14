@@ -25,13 +25,15 @@ Main menu page with routing
 -   [x] Functioning game
 -   [x] Ability to play with mouse
 -   [ ] Ability to play with SPACEBAR and WASD or ARROW KEYS
+-   [x] Game rules bug
 -   [x] Advanced design style
 -   [x] Responsive design
 -   [ ] Main menu page
 -   [ ] Options page
--   [ ] localStorage to store scores
 -   [ ] different colors for each player (css variables)
--   [ ] Bug fixes
+-   [ ] localStorage to store
+    - [ ] Scores
+    - [ ] Selected color
 
 ### 💻 Prerequisites
 
