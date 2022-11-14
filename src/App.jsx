@@ -109,7 +109,6 @@ function App() {
 
   useEffect(() => {
     const keyDownHandler = event => {
-
       if (event.key === 'a' || event.key === 'A') {
         console.log('kaire');
       } else if (event.key === 'd' || event.key === 'D'){
@@ -118,6 +117,8 @@ function App() {
         console.log('aukstyn');
       } else if (event.key === 's' || event.key === 'S') {
         console.log('zemyn');
+      } else if (event.key === " "){
+        console.log('Space');
       }
       if (event.key === 'Escape') {
         event.preventDefault();
