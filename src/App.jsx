@@ -10,9 +10,10 @@ function App() {
   const [result, setResult] = useState({winner: "none", state: "none"})
   const [xxx, setXxx] = useState(0)
   const [ooo, setOoo] = useState(0)
-
+  const [movement, setMovement] = useState({})
   let scoreLimit = 5
 
+  //GAME LOGIC
   useEffect(() => {
     if (checkWin()) {
       setResult({winner: player === "X" ? "O" : "X", state: "Won"})
@@ -78,7 +79,6 @@ function App() {
         return x = true;
       }
     })
-    // console.log(x);
     return x
   }
 
@@ -99,6 +99,43 @@ function App() {
     setBoard(["", "", "", "", "", "", "", "", ""])
     setPlayer("X")
   }
+  //GAME LOGIC END
+  
+  // MOVEMENT
+  const myFunction = () => {
+    // your logic here
+    console.log('pressed Esc ✅');
+  };
+
+  useEffect(() => {
+    const keyDownHandler = event => {
+
+      if (event.key === 'a' || event.key === 'A') {
+        console.log('kaire');
+      } else if (event.key === 'd' || event.key === 'D'){
+        console.log('desine');
+      } else if (event.key === 'w' || event.key === 'W') {
+        console.log('aukstyn');
+      } else if (event.key === 's' || event.key === 'S') {
+        console.log('zemyn');
+      }
+      if (event.key === 'Escape') {
+        event.preventDefault();
+
+        // 👇️ your logic here
+        myFunction();
+      }
+    };
+
+    document.addEventListener('keydown', keyDownHandler);
+
+    // 👇️ clean up event listener
+    return () => {
+      document.removeEventListener('keydown', keyDownHandler);
+    };
+  }, []);
+
+  // MOVEMENT END
 
   return (
     <div className="App">
