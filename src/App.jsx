@@ -11,10 +11,14 @@ function App() {
   const [xxx, setXxx] = useState(0)
   const [ooo, setOoo] = useState(0)
 
-  let scoreLimit = 2
+  let scoreLimit = 5
 
   useEffect(() => {
-    checkWin();
+    if (checkWin()) {
+      setResult({winner: player === "X" ? "O" : "X", state: "Won"})
+    } else {
+      checkTie()
+    };
     if (xxx === scoreLimit) {
       alert(`Winner ${result.winner}${result.state}`)
       setXxx(0)
@@ -39,7 +43,6 @@ function App() {
       setOoo(o => ++o)
       restartGame()
     } else {
-      alert("Lygios")
       restartGame()
     }
 
@@ -60,6 +63,7 @@ function App() {
   };
 
   const checkWin = () => {
+    let x = false
     Patterns.forEach((currPattern) => {
       let foundWinningPattern = true
 
@@ -71,25 +75,25 @@ function App() {
         }
       })
       if (foundWinningPattern) {
-        setResult({winner: player === "X" ? "O" : "X", state: "Won"})
-        /* sioje vietoje nugaletojas apkeistas dirbtinai, bet kol veikia*/
+        return x = true;
       }
     })
+    // console.log(x);
+    return x
   }
 
-  // const checkTie = () => {
-  //   /* reikia taisyti tikrinima, nes kai nera tusciu nebutinai
-  //    reiskia lygiasias, kartais tai yra laimejimas */
-  //   let filled = true;
-  //   board.forEach((square) => {
-  //     if (square === "") {
-  //       filled = false
-  //     }
-  //   })
-  //   if (filled) {
-  //     setResult({winner: "No one", state: "Tie"})
-  //   }
-  // }
+  const checkTie = () => {
+    let filled = true;
+    board.forEach((square) => {
+      if (square === "") {
+        filled = false
+      }
+    })
+    if (filled) {
+      alert("lygios")
+      setResult({winner: "No one", state: "Tie"})
+    }
+  }
 
   const restartGame = () => {
     setBoard(["", "", "", "", "", "", "", "", ""])
