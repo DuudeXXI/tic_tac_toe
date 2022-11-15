@@ -28,6 +28,7 @@ Main menu page with routing
 -   [x] Game rules bug
 -   [x] Advanced design style
 -   [x] Responsive design
+-   [ ] "Notfound" page
 -   [ ] Main menu page
 -   [ ] Options page
 -   [ ] different colors for each player (css variables)
