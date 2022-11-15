@@ -32,7 +32,7 @@ Main menu page with routing
 -   [ ] Options page
 -   [ ] different colors for each player (css variables)
 -   [ ] localStorage to store
-    - [ ] Scores
+    - [x] Scores
     - [ ] Selected color
 
 ### 💻 Prerequisites
