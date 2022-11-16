@@ -79,13 +79,13 @@ body {
     color: rgb(255, 255, 255);
     text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
     margin: 20px;
+    margin-bottom: 40px;
   }
   h2 {
     font-size: 32px;
     color: rgb(255, 255, 255);
     text-shadow: 0 0 2px #0fa, 0 0 10px #0fa;
-    margin: 15px;
-    margin-bottom: 50px;
+    margin: 25px;
   }
 }
 
@@ -205,4 +205,12 @@ body {
     0 0 5px #0fa,
     0 0 20px #0fa
 }
+}
+.bigger{
+  display: block;
+  width: 100px;
+  height: 100px;
+  path{
+    fill: #fff;
+  }
 }
