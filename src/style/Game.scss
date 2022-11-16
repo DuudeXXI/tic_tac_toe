@@ -133,7 +133,7 @@
             fill: rgb(255, 255, 255, 0.3);
           }
         }
-      &:hover{
+        &:active, &:hover{
         border: 2px solid rgb(215, 215, 215);
         box-shadow: 0 0 2px rgb(255, 255, 255),
         0 0 2px rgba(0, 255, 170),
@@ -147,10 +147,6 @@
       }
   }
   @media (max-width: 768px) {
-    .PageGame{
-      height:fit-content;
-      padding-bottom: 40px;
-    }
     .points {
       span{
         font-size: 28px;
@@ -174,10 +170,6 @@
     }
   }
   @media (max-width: 576px) {
-    .PageGame{
-      height:fit-content;
-      padding-bottom: 30px;
-    }
     .points {
       span{
         font-size: 24px;
@@ -201,10 +193,6 @@
     }
   }
   @media (max-width: 320px) {
-    .PageGame{
-      height:fit-content;
-      padding-bottom: 20px;
-    }
     .points {
       span{
         font-size: 18px;
@@ -217,14 +205,14 @@
       }
     }
     .square {
-      height: 80px;
+      height: 70px;
       span {
         font-size: 42px;
       }
     }
     .board {
-      width: 240px;
-      height: 240px;
+      width: 210px;
+      height: 210px;
     }
     .game-menu{
       a, i{
