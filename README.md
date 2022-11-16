@@ -28,6 +28,9 @@ Main menu page with routing
 -   [x] Game rules bug
 -   [x] Advanced design style
 -   [x] Responsive design
+-   [ ] Buttons:
+    -   [ ] Restart Button
+    -   [ ] Main menu button
 -   [ ] "Notfound" page
 -   [ ] Main menu page
 -   [ ] Options page
