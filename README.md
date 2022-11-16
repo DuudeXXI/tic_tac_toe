@@ -35,6 +35,7 @@ Main menu page with routing
 -   [ ] Main menu page
 -   [ ] Options page
 -   [ ] different colors for each player (css variables)
+-   [ ] custom cursor styles
 -   [ ] localStorage to store
     - [x] Scores
     - [ ] Selected color
