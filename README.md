@@ -28,11 +28,11 @@ Main menu page with routing
 -   [x] Game rules bug
 -   [x] Advanced design style
 -   [x] Responsive design
--   [ ] Buttons:
-    -   [ ] Restart Button
-    -   [ ] Main menu button
--   [ ] "Notfound" page
--   [ ] Main menu page
+-   [x] Buttons:
+    -   [x] Restart Button
+    -   [x] Main menu button
+-   [x] "Notfound" page
+-   [x] Main menu page
 -   [ ] Options page
 -   [ ] different colors for each player (css variables)
 -   [ ] custom cursor styles
