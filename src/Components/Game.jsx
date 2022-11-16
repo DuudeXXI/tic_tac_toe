@@ -1,11 +1,17 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+// FROM REACT
 import { useState, useEffect } from "react";
+// COMPONENTS
 import Square from "./Square";
 import { Patterns } from "../Patterns";
+// FONTAWESOME
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
+// ROUTER
+import { Link } from "react-router-dom";
 
-library.add(faHouse)
+library.add(faHouse, faArrowsRotate)
+
 const Game = () => {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("X");
@@ -165,7 +171,7 @@ const Game = () => {
   // MOVEMENT END
 
   return (
-    <div className="App">
+    <div className="PageGame">
       <div className="points">
         <span>TIC TAC TOE</span>
         <hr />
@@ -241,9 +247,11 @@ const Game = () => {
       </div>
       <div className="points">
             <h2>Current move: {player}</h2>
+            <hr />
       </div>
       <div className="game-menu">
-      <i ><FontAwesomeIcon icon="fa-solid fa-house" className='bigger'/></i>
+      <Link to="/tic_tac_toe/menu"><FontAwesomeIcon icon="fa-solid fa-house" className='icon'/></Link>
+      <i><FontAwesomeIcon icon="fa-solid fa-arrows-rotate" className='icon'/></i>
       </div>
     </div>
   );
