@@ -1,5 +1,5 @@
 // FROM REACT
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // COMPONENTS
 import Square from "./Square";
 import { Patterns } from "../Patterns";
@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 // ROUTER
 import { Link } from "react-router-dom";
+//  CONTEXT
+import MainContext from "../Contexts/MainContext"
 
 library.add(faHouse, faArrowsRotate);
 
@@ -19,7 +21,10 @@ const Game = () => {
   const [xxx, setXxx] = useState(0);
   const [ooo, setOoo] = useState(0);
   const [movement, setMovement] = useState({});
-  let scoreLimit = 5;
+
+  const { matchScore } = useContext(MainContext)
+
+  let scoreLimit = JSON.parse(localStorage.getItem("matchScore")) ?? matchScore;
 
   // LOCALSTORAGE
   useEffect(() => {
@@ -144,10 +149,6 @@ const Game = () => {
   //GAME LOGIC END
 
   // MOVEMENT
-  const myFunction = () => {
-    // your logic here
-    console.log("pressed Esc ✅");
-  };
 
   useEffect(() => {
     const keyDownHandler = (event) => {

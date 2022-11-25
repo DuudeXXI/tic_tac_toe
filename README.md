@@ -35,8 +35,8 @@ Main menu page with routing
 -   [x] "Notfound" page
 -   [x] Main menu page
 -   [ ] Options page
--   [ ] Custom score input
--   [ ] different colors for each player (css variables)
+-   [x] Custom score input
+-   [ ] different colors for each player
 -   [ ] custom cursor styles
 -   [ ] localStorage to store
     - [x] Scores

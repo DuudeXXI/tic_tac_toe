@@ -37,12 +37,21 @@
     &:active {
       background-color: rgba(239, 116, 255, 0.116);
     }
-    span {
+    .players-default{
       color: rgb(255, 255, 255);
-      animation: pulsate 1.5s infinite alternate;  
-      text-shadow: 0 0 .2rem #fff,
-      0 0 2rem rgba(0, 255, 170, 0.596); 
       font-size: 92px;
+    }
+    .default-color{
+      animation: pulsateDefault 1.5s infinite alternate;  
+    }
+    .player-purple{
+      animation: pulsatePurple 1.5s infinite alternate;  
+    }
+    .player-red{
+      animation: pulsateRed 1.5s infinite alternate;  
+    }
+    .player-blue{
+      animation: pulsateBlue 1.5s infinite alternate;  
     }
   }
   .points {
@@ -173,7 +182,7 @@
     }
     .square {
       height: 140px;
-      span {
+      .players-default{
         font-size: 68px;
       }
     }
@@ -190,15 +199,17 @@
       .score-Board{
         h1 {
           font-size: 52px;
+          text-shadow: 0 0 3px #0fa, 0 0 5px #0fa;
         }
       }
       h2 {
         font-size: 22px;
+        text-shadow: 0 0 2px #0fa, 0 0 4px #0fa;
       }
     }
     .square {
       height: 100px;
-      span {
+      .players-default{
         font-size: 52px;
       }
     }
@@ -208,10 +219,39 @@
     }
   }
   @media (max-width: 390px) {
+    .line-top {
+      height: 2px;
+      width: 100%;
+      bottom: -2px;
+      left: 0;
+    }
+    .line-bottom {
+      height: 2px;
+      width: 100%;
+      bottom: -2px;
+      left: 0;
+    }
+    .line-vertical-left {
+      height: calc(300% + 2px);
+      width: 2px;
+      left: 33%;
+      top: -2px;
+    }
+    .line-vertical-right{
+      height: calc(300% + 2px);
+      width: 2px;
+      left: 66%;
+      bottom: -2px;
+    }
+    .line {
+      box-shadow: 0 0 1px #fff,
+      0 0 2px #0fa,
+      0 0 5px #0fa;
+    }
     .square {
       height: 65px;
-      span {
-        font-size: 42px;
+      .players-default{
+        font-size: 36px;
       }
     }
     .board {
@@ -237,8 +277,8 @@
   @media (max-width: 320px) {
     .square {
       height: 65px;
-      span {
-        font-size: 42px;
+      .players-default{
+        font-size: 36px;
       }
     }
     .board {
@@ -262,18 +302,60 @@
     }
   }
   
-  @keyframes pulsate {
+  @keyframes pulsateDefault {
     100% {
         text-shadow:
         0 0 2px #fff,
-        0 0 8px #0fa,
-        0 0 10px #0fa
+        0 0 4px #0fa,
+        0 0 8px #0fa
     }
     0% {
       text-shadow:
       0 0 2px #fff,
-      0 0 5px #0fa,
-      0 0 20px #0fa
+      0 0 3px #0fa,
+      0 0 8px #0fa
+  }
+  }
+  @keyframes pulsatePurple {
+    100% {
+        text-shadow:
+        0 0 2px #fff,
+        0 0 4px rgb(212, 0, 255),
+        0 0 8px rgb(212, 0, 255)
+    }
+    0% {
+      text-shadow:
+      0 0 2px #fff,
+      0 0 3px rgb(212, 0, 255),
+      0 0 8px rgb(212, 0, 255)
+  }
+  }
+  @keyframes pulsateRed {
+    100% {
+        text-shadow:
+        0 0 2px #fff,
+        0 0 4px rgb(255, 0, 0),
+        0 0 8px rgb(255, 0, 0)
+    }
+    0% {
+      text-shadow:
+      0 0 2px #fff,
+      0 0 3px rgb(255, 0, 0),
+      0 0 8px rgb(255, 0, 0)
+  }
+  }
+  @keyframes pulsateBlue {
+    100% {
+        text-shadow:
+        0 0 2px #fff,
+        0 0 4px rgb(0, 132, 255),
+        0 0 8px rgb(0, 132, 255)
+    }
+    0% {
+      text-shadow:
+      0 0 2px #fff,
+      0 0 3px rgb(0, 132, 255),
+      0 0 8px rgb(0, 132, 255)
   }
   }
   
