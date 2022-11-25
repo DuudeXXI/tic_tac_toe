@@ -23,7 +23,8 @@
       color: rgb(255, 255, 255, 0.3);
       cursor: pointer;
       display: block;
-      padding: 25px 50px;
+      padding: 20px 40px;
+      font-size: 20px;
       border-radius: 12px;
       border: 2px solid rgb(215, 215, 215, 0.3);
       transition: all 0.2s ease-in-out;
@@ -54,6 +55,40 @@
 
 @media (max-width: 768px){}
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+  .PageMain {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+    h1 {
+      font-size: 42px;
+      color: #fff;
+      text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+      margin: 20px;
+    }
+  .main-menu {
+    a {
+      text-decoration: none;
+      color: rgb(255, 255, 255, 0.3);
+      cursor: pointer;
+      font-size: 18px;
+      display: block;
+      padding: 15px 30px;
+      border-radius: 12px;
+      border: 2px solid rgb(215, 215, 215, 0.3);
+      transition: all 0.2s ease-in-out;
+      .icon {
+        display: block;
+        width: 50px;
+        height: 25px;
+      }
+    }
+  }
+}
+}
 
 @media (max-width: 320px) {}

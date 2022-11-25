@@ -25,6 +25,7 @@ Main menu page with routing
 -   [x] Functioning game
 -   [x] Ability to play with mouse
 -   [ ] Ability to play with SPACEBAR and WASD or ARROW KEYS
+-   [x] Esc button resets game
 -   [x] Game rules bug
 -   [x] Advanced design style
 -   [x] Responsive design
@@ -34,6 +35,7 @@ Main menu page with routing
 -   [x] "Notfound" page
 -   [x] Main menu page
 -   [ ] Options page
+-   [ ] Custom score input
 -   [ ] different colors for each player (css variables)
 -   [ ] custom cursor styles
 -   [ ] localStorage to store

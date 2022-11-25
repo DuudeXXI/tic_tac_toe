@@ -51,6 +51,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
     span{
       font-size: 32px;
       color: rgb(255, 255, 255);
@@ -62,12 +63,22 @@
       color: rgb(255, 255, 255);
       box-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
     }
-    h1 {
-      font-size: 60px;
-      color: rgb(255, 255, 255);
-      text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+    .score-Board{
+      display: grid;
+      width: 80%;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      justify-items: center;
       margin: 5px;
-      margin-bottom: 20px;
+      h1 {
+        display: block;
+        text-align: center;
+        width: 100%;
+        font-size: 60px;
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+        margin: 0;
+      }
     }
     h2 {
       font-size: 32px;
@@ -151,8 +162,10 @@
       span{
         font-size: 28px;
       }
-      h1 {
-        font-size: 60px;
+      .score-Board{
+        h1 {
+          font-size: 60px;
+        }
       }
       h2 {
         font-size: 26px;
@@ -174,8 +187,10 @@
       span{
         font-size: 24px;
       }
-      h1 {
-        font-size: 52px;
+      .score-Board{
+        h1 {
+          font-size: 52px;
+        }
       }
       h2 {
         font-size: 22px;
@@ -192,27 +207,43 @@
       height: 300px;
     }
   }
-  @media (max-width: 320px) {
-    .points {
-      span{
-        font-size: 18px;
-      }
-      h1 {
-        font-size: 42px;
-      }
-      h2 {
-        font-size: 18px;
-      }
-    }
+  @media (max-width: 390px) {
     .square {
-      height: 70px;
+      height: 65px;
       span {
         font-size: 42px;
       }
     }
     .board {
-      width: 210px;
-      height: 210px;
+      width: 195px;
+      height: 195px;
+    }
+    .game-menu{
+      a, i{
+          cursor: pointer;
+          display: block;
+          padding: 10px;
+          border-radius: 15px;
+          border: 2px solid rgb(215, 215, 215, 0.3);
+          transition: all 0.2s ease-in-out;
+          .icon{
+            display: block;
+            width: 40px;
+            height: 20px;
+          }
+        }
+    }
+  }
+  @media (max-width: 320px) {
+    .square {
+      height: 65px;
+      span {
+        font-size: 42px;
+      }
+    }
+    .board {
+      width: 195px;
+      height: 195px;
     }
     .game-menu{
       a, i{

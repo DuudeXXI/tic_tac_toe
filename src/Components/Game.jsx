@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import Square from "./Square";
 import { Patterns } from "../Patterns";
 // FONTAWESOME
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse, faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 // ROUTER
 import { Link } from "react-router-dom";
 
-library.add(faHouse, faArrowsRotate)
+library.add(faHouse, faArrowsRotate);
 
 const Game = () => {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
@@ -39,10 +39,10 @@ const Game = () => {
       localStorage.setItem("Player O", 0);
     }
     if (!xxx && !ooo) {
-      setXxx(JSON.parse(localStorage.getItem("Player X")));
-      setOoo(JSON.parse(localStorage.getItem("Player O")));
+      setXxx(localStorage.getItem("Player X"));
+      setOoo(localStorage.getItem("Player O"));
     }
-  }, [result]);
+  }, [result,xxx,ooo]);
 
   //GAME LOGIC
   useEffect(() => {
@@ -131,6 +131,16 @@ const Game = () => {
     setBoard(["", "", "", "", "", "", "", "", ""]);
     setPlayer("X");
   };
+  const resetGame = () => {
+    setBoard(["", "", "", "", "", "", "", "", ""]);
+    setPlayer("X");
+    setXxx(0);
+    setOoo(0);
+    localStorage.setItem("Player X", 0);
+    localStorage.setItem("Player O", 0);
+
+
+  };
   //GAME LOGIC END
 
   // MOVEMENT
@@ -154,15 +164,13 @@ const Game = () => {
       }
       if (event.key === "Escape") {
         event.preventDefault();
-
-        // 👇️ your logic here
-        myFunction();
+        resetGame()
       }
     };
 
     document.addEventListener("keydown", keyDownHandler);
 
-    // 👇️ clean up event listener
+    // clean up event listener
     return () => {
       document.removeEventListener("keydown", keyDownHandler);
     };
@@ -175,9 +183,11 @@ const Game = () => {
       <div className="points">
         <span>TIC TAC TOE</span>
         <hr />
-        <h1>
-          {ooo} | {xxx}
-        </h1>
+        <div className="score-Board">
+          <h1>{ooo}</h1>
+          <h1>|</h1>
+          <h1>{xxx}</h1>
+        </div>
       </div>
       <div className="board">
         <div className="row">
@@ -246,17 +256,19 @@ const Game = () => {
         </div>
       </div>
       <div className="points">
-            <h2>Current move: {player}</h2>
-            <hr />
+        <h2>Current move: {player}</h2>
+        <hr />
       </div>
       <div className="game-menu">
-      <Link to="/tic_tac_toe/menu"><FontAwesomeIcon icon="fa-solid fa-house" className='icon'/></Link>
-      <i><FontAwesomeIcon icon="fa-solid fa-arrows-rotate" className='icon'/></i>
+        <Link to="/tic_tac_toe/menu">
+          <FontAwesomeIcon icon="fa-solid fa-house" className="icon" />
+        </Link>
+        <i onClick={resetGame}>
+          <FontAwesomeIcon icon="fa-solid fa-arrows-rotate" className="icon" />
+        </i>
       </div>
     </div>
   );
 };
 
 export default Game;
-
-
