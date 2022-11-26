@@ -15,16 +15,16 @@ function App() {
   const [matchScore, setMatchScore] = useState(5);
   const [xPlayer, setXPlayer] = useState("default-color");
   const [oPlayer, setOPlayer] = useState("default-color");
-
+  console.log(xPlayer);
   useEffect(() => {
     if (localStorage.getItem("matchScore") !== null) {
       setMatchScore(localStorage.getItem("matchScore"));
     }
-    if (localStorage.getItem("player X color") !== null) {
-      setXPlayer(localStorage.getItem("player X color"));
+    if (localStorage.getItem("Player X color") !== null) {
+      setXPlayer(localStorage.getItem("Player X color"));
     }
-    if (localStorage.getItem("player O color") !== null) {
-      setOPlayer(localStorage.getItem("player O color"));
+    if (localStorage.getItem("Player O color") !== null) {
+      setOPlayer(localStorage.getItem("Player O color"));
     }
 
   }, [matchScore, xPlayer, oPlayer]);

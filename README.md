@@ -36,11 +36,18 @@ Main menu page with routing
 -   [x] Main menu page
 -   [ ] Options page
 -   [x] Custom score input
--   [ ] different colors for each player
+-   [x] different colors for each player
 -   [ ] custom cursor styles
--   [ ] localStorage to store
+-   [x] localStorage to store
     - [x] Scores
-    - [ ] Selected color
+    - [x] Selected color
+-   [ ] Input validations
+    -   [ ] options score input
+        -   [ ] allow only numbers (0-9)
+        -   [ ] first number can not be 0
+        -   [ ] input can be empty (on confirm - will be set to default value)
+    -   [ ] settings from local storage set to default if foulty
+
 
 ### 💻 Prerequisites
 

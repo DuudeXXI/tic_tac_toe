@@ -64,13 +64,13 @@
     span{
       font-size: 32px;
       color: rgb(255, 255, 255);
-      text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+      text-shadow: 0 0 2px #fff, 0 0 8px #fff;
       margin: 10px;
     }
     hr{
       width: 100%;
       color: rgb(255, 255, 255);
-      box-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+      box-shadow: 0 0 1px #fff,  0 0 6px #fff;
     }
     .score-Board{
       display: grid;
@@ -85,14 +85,14 @@
         width: 100%;
         font-size: 60px;
         color: rgb(255, 255, 255);
-        text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+        text-shadow: 0 0 1px #fff, 0 0 8px #fff;
         margin: 0;
       }
     }
     h2 {
       font-size: 32px;
       color: rgb(255, 255, 255);
-      text-shadow: 0 0 2px #0fa, 0 0 10px #0fa;
+      text-shadow: 0 0 1px #fff, 0 0 6px #fff;
       margin-top: 20px;
       margin-bottom: 10px;
     }
@@ -126,9 +126,9 @@
     position: absolute;
     content: "";
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 4px #fff,
-    0 0 8px #0fa,
-    0 0 15px #0fa;
+    box-shadow: 0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 12px #fff;
     border-radius: 99px;
   }
 
@@ -156,8 +156,8 @@
         &:active, &:hover{
         border: 2px solid rgb(215, 215, 215);
         box-shadow: 0 0 2px rgb(255, 255, 255),
-        0 0 2px rgba(0, 255, 170),
-        0 0 12px rgb(0, 255, 170);
+        0 0 2px rgb(255, 255, 255),
+        0 0 12px rgb(255, 255, 255);
         .icon{
           path{
             fill: rgb(255, 255, 255);
@@ -199,12 +199,12 @@
       .score-Board{
         h1 {
           font-size: 52px;
-          text-shadow: 0 0 3px #0fa, 0 0 5px #0fa;
+          text-shadow: 0 0 1px #fff, 0 0 5px #fff;
         }
       }
       h2 {
         font-size: 22px;
-        text-shadow: 0 0 2px #0fa, 0 0 4px #0fa;
+        text-shadow: 0 0 1px #fff, 0 0 4px #fff;
       }
     }
     .square {
@@ -245,8 +245,8 @@
     }
     .line {
       box-shadow: 0 0 1px #fff,
-      0 0 2px #0fa,
-      0 0 5px #0fa;
+      0 0 2px #fff,
+      0 0 5px #fff;
     }
     .square {
       height: 65px;
@@ -306,14 +306,14 @@
     100% {
         text-shadow:
         0 0 2px #fff,
-        0 0 4px #0fa,
-        0 0 8px #0fa
+        0 0 4px #fff,
+        0 0 8px #fff
     }
     0% {
       text-shadow:
       0 0 2px #fff,
-      0 0 3px #0fa,
-      0 0 8px #0fa
+      0 0 3px #fff,
+      0 0 8px #fff
   }
   }
   @keyframes pulsatePurple {

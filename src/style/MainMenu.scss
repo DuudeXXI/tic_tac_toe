@@ -8,7 +8,7 @@
   h1 {
     font-size: 54px;
     color: #fff;
-    text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+    text-shadow: 0 0 2px #fff, 0 0 6px #fff;
     margin: 20px;
   }
   .main-menu {
@@ -39,10 +39,10 @@
       }
       &:active, &:hover {
         color: rgb(255, 255, 255);
-        text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+        text-shadow: 0 0 2px #fff, 0 0 20px rgba(255, 255, 255, 0.8);
         border: 2px solid rgb(215, 215, 215);
-        box-shadow: 0 0 2px rgb(255, 255, 255), 0 0 2px rgba(0, 255, 170),
-          0 0 12px rgb(0, 255, 170);
+        box-shadow: 0 0 2px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255),
+          0 0 12px rgb(255, 255, 255);
         .icon {
           path {
             fill: rgb(255, 255, 255);
@@ -67,7 +67,7 @@
     h1 {
       font-size: 42px;
       color: #fff;
-      text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+      text-shadow: 0 0 1px #fff, 0 0 6px #fff;
       margin: 20px;
     }
   .main-menu {

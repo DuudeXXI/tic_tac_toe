@@ -3,23 +3,50 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content:center;
     flex-direction: column;
+    h1{
+      font-size: 16px;
+      color:#fff;
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+      margin: 30px 0 5px 0;
+    }
     .options-confirm-btn{
-      font-family: Orbitron;
-      background-color: transparent;
-        cursor: pointer;
-        padding: 10px;
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 10px;
+      margin-top: 30px;
+      a, button{
+        background-color: transparent;
         color: rgb(215, 215, 215, 0.3);
-        border-radius: 4px;
+        font-family: Orbitron;
+        cursor: pointer;
+        display: block;
+        padding: 10px;
+        border-radius: 15px;
         border: 2px solid rgb(215, 215, 215, 0.3);
         transition: all 0.2s ease-in-out;
+        .icon{
+          display: block;
+          width: 50px;
+          height: 25px;
+          path{
+            transition: fill 0.4s ease;
+            fill: rgb(255, 255, 255, 0.3);
+          }
+        }
         &:active, &:hover{
-          color: rgb(255, 255, 255);
-          text-shadow: 0 0 1px #fff, 0 0 2px #0fa, 0 0 12px #0fa;
+          color: #fff;
         border: 2px solid rgb(215, 215, 215);
         box-shadow: 0 0 2px rgb(255, 255, 255),
-        0 0 2px rgba(0, 255, 170),
-        0 0 12px rgb(0, 255, 170);
+        0 0 2px rgb(255, 255, 255),
+        0 0 12px rgb(255, 255, 255);
+        .icon{
+          path{
+            fill: rgb(255, 255, 255);
+          }
+        }
+      }
       }
     }
   }
