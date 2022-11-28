@@ -152,16 +152,14 @@ const Game = () => {
 
   useEffect(() => {
     const keyDownHandler = (event) => {
+
       if (event.key === "a" || event.key === "A") {
-        console.log("kaire");
       } else if (event.key === "d" || event.key === "D") {
-        console.log("desine");
       } else if (event.key === "w" || event.key === "W") {
-        console.log("aukstyn");
       } else if (event.key === "s" || event.key === "S") {
-        console.log("zemyn");
       } else if (event.key === " ") {
-        console.log("Space");
+      } else if (event.ctrlKey && event.key === 'z') {
+        alert('Undo!');
       }
       if (event.key === "Escape") {
         event.preventDefault();

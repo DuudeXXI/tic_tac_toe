@@ -42,6 +42,7 @@ const OptionsMenu = () => {
         <input
           type="text"
           value={score}
+          placeholder={score}
           maxLength={2}
           onChange={(e) => setScore(e.target.value)}
         />

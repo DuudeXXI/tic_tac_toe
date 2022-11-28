@@ -15,7 +15,7 @@ function App() {
   const [matchScore, setMatchScore] = useState(5);
   const [xPlayer, setXPlayer] = useState("default-color");
   const [oPlayer, setOPlayer] = useState("default-color");
-  console.log(xPlayer);
+
   useEffect(() => {
     if (localStorage.getItem("matchScore") !== null) {
       setMatchScore(localStorage.getItem("matchScore"));
