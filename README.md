@@ -41,12 +41,12 @@ Main menu page with routing
 -   [x] localStorage to store
     - [x] Scores
     - [x] Selected color
--   [ ] Input validations
-    -   [ ] options score input
-        -   [ ] allow only numbers (0-9)
-        -   [ ] first number can not be 0
-        -   [ ] input can be empty (on confirm - will be set to default value)
-    -   [ ] settings from local storage set to default if foulty
+-   [x] Input validations
+    -   [x] options score input
+        -   [x] allow only numbers (0-9)
+        -   [x] first number can not be 0
+        -   [x] input can be empty
+    -   [x] settings from local storage set to default if foulty
 
 
 ### 💻 Prerequisites

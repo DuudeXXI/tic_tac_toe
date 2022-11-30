@@ -17,14 +17,35 @@ function App() {
   const [oPlayer, setOPlayer] = useState("default-color");
 
   useEffect(() => {
-    if (localStorage.getItem("matchScore") !== null) {
+    if (localStorage.getItem("matchScore") !== null)
+     {
       setMatchScore(localStorage.getItem("matchScore"));
+    } else {
+      localStorage.setItem("matchScore", matchScore)
     }
-    if (localStorage.getItem("Player X color") !== null) {
+    if ((localStorage.getItem("Player X color") !== null &&
+    localStorage.getItem("Player X color") === "default-color") ||
+    (localStorage.getItem("Player X color") !== null &&
+    localStorage.getItem("Player X color") === "player-purple") ||
+    (localStorage.getItem("Player X color") !== null &&
+    localStorage.getItem("Player X color") === "player-blue") ||
+    (localStorage.getItem("Player X color") !== null &&
+    localStorage.getItem("Player X color") === "player-red")) {
       setXPlayer(localStorage.getItem("Player X color"));
+    } else {
+      localStorage.setItem("Player X color", xPlayer)
     }
-    if (localStorage.getItem("Player O color") !== null) {
+    if ((localStorage.getItem("Player O color") !== null &&
+    localStorage.getItem("Player O color") === "default-color") ||
+    (localStorage.getItem("Player O color") !== null &&
+    localStorage.getItem("Player O color") === "player-purple") ||
+    (localStorage.getItem("Player O color") !== null &&
+    localStorage.getItem("Player O color") === "player-blue") ||
+    (localStorage.getItem("Player O color") !== null &&
+    localStorage.getItem("Player O color") === "player-red")) {
       setOPlayer(localStorage.getItem("Player O color"));
+    } else {
+      localStorage.setItem("Player O color", oPlayer)
     }
 
   }, [matchScore, xPlayer, oPlayer]);

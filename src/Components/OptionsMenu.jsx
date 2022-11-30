@@ -26,26 +26,48 @@ const OptionsMenu = () => {
   const [o, setO] = useState(localStorage.getItem("Player O color") ?? oPlayer)
 
   const applySettings = () => {
+    if (score > 100 || score.length === 0 || score < 1) {
+      return;
+    }
     setOPlayer(o)
     setXPlayer(x)
-    setMatchScore(score);
-    localStorage.setItem("matchScore", score);
+    setMatchScore(parseInt(score, 10));
+    localStorage.setItem("matchScore", parseInt(score, 10));
     localStorage.setItem("Player X color", x);
     localStorage.setItem("Player O color", o);
     alert("Settings saved")
   };
+  console.log(matchScore);
+  console.log(parseInt(score, 10));
+
+  useEffect(() => {
+    for (let i = 0; i < score.length; i++) {
+      if(isNaN(score[i]) || score.split("")[i] === " "){
+        setScore('')
+      }
+
+    }
+}, [score])
+
+  const scoreValidation = e => {
+    setScore(e.target.value)
+  }
 
   return (
     <>
       <div className="PageOptions">
         <h1>Current score : {matchScore}</h1>
+        <div style={{position: "relative"}}>
         <input
+          className={score.length === 0 || score > 100 || score < 1 ? "empty" : null}
           type="text"
           value={score}
           placeholder={score}
-          maxLength={2}
-          onChange={(e) => setScore(e.target.value)}
+          maxLength={10}
+          onChange={scoreValidation}
         />
+        <span style={score.length === 0 || score > 100 || score < 1 ? {display: "block"} : {display: "none"}} className="message">{score.length === 0 ? "*Input can't be empty" : score > 100 ? "*Input can't be more than 100": score < 1 ? "*Input can't be less than 1" : null}</span>
+        </div>
         <h1>Player X color</h1>
         <div className="player-x-settings">
           <button className={`player-general player-x-default ${x === "default-color" ? "selected-color" : null}`} color="default-color" onClick={e => setX(e.target.attributes.color.nodeValue)}></button>
