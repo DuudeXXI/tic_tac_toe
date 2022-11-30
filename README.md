@@ -34,7 +34,7 @@ Main menu page with routing
     -   [x] Main menu button
 -   [x] "Notfound" page
 -   [x] Main menu page
--   [ ] Options page
+-   [x] Options page
 -   [x] Custom score input
 -   [x] different colors for each player
 -   [ ] custom cursor styles
